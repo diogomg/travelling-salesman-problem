@@ -1,0 +1,18 @@
+typedef struct aresta{
+    int dest, custo;
+    struct aresta *prox;
+} aresta;
+
+typedef struct vertice{
+    int pai, valor;
+    aresta *adjacente;
+} vertice;
+
+const int INF = 20000;
+
+void liberaGrafo(vertice *vertices, int n_ver);
+void inicializaGrafo(vertice *vertices, int n_ver);
+void listaVertices(vertice *vertices, int n_ver);
+void listaArestas(vertice *vertices, int n_ver);
+void removerAresta(vertice *vertices, int ori, int dest);
+void inserirAresta(vertice *vertices, int ori, int dest, int custo);
