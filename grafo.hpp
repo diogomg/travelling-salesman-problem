@@ -4,7 +4,7 @@ typedef struct aresta{
 } aresta;
 
 typedef struct vertice{
-    int pai, valor;
+    int pai;
     aresta *adjacente;
 } vertice;
 
@@ -14,5 +14,6 @@ void liberaGrafo(vertice *vertices, int n_ver);
 void inicializaGrafo(vertice *vertices, int n_ver);
 void listaVertices(vertice *vertices, int n_ver);
 void listaArestas(vertice *vertices, int n_ver);
-void removerAresta(vertice *vertices, int ori, int dest);
-void inserirAresta(vertice *vertices, int ori, int dest, int custo);
+void removeAresta(vertice *vertices, int ori, int dest);
+void insereAresta(vertice *vertices, int ori, int dest, int custo);
+int verificaAresta(vertice *vertices, int ori, int dest);

@@ -8,12 +8,10 @@ using namespace std;
  */
 void inicializaGrafo(vertice *vertices, int n_ver){
 
-    vertices[0].pai = 0;
-    vertices[0].valor = INF;
-    vertices[0].adjacente = NULL;
-    for(int i=1; i<n_ver; i++) {
+    //vertices[0].pai = 0;
+    //vertices[0].adjacente = NULL;
+    for(int i=0; i<n_ver; i++) {
         vertices[i].pai = -1;
-        vertices[i].valor = INF;
         vertices[i].adjacente = NULL;
     }
 }
@@ -24,7 +22,7 @@ void inicializaGrafo(vertice *vertices, int n_ver){
 void listaVertices(vertice *vertices, int n_ver){
 
     for(int i = 0; i < n_ver; i++){
-        cout << "vertice: " << i << "\tcusto: " << vertices[i].valor << endl;
+        cout << "vertice: " << i << "\tpai: " << vertices[i].pai << endl;
     }
 }
 
@@ -65,6 +63,18 @@ void removeAresta(vertice *vertices, int ori, int dest){
             are2 = are2->prox;
         }
     }
+}
+
+int verificaAresta(vertice *vertices, int ori, int dest){
+
+    aresta *are = vertices[ori].adjacente;
+    while(are){
+        if(are->dest == dest){
+            return are->custo;
+        }
+        are = are->prox;
+    }
+    return 0;
 }
 
 /*

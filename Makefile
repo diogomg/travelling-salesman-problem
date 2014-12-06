@@ -16,3 +16,7 @@ run:
 
 clean: *.o
 	rm *.o
+
+graph: gerador.cpp
+	$(CC) gerador.cpp -o gerador
+	./gerador
