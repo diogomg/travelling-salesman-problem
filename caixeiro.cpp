@@ -92,7 +92,6 @@ void backtrack(vertice *vertices, list<int> l, int cpc, int v_atual){
             a = a->prox;//proxima resta
         }
     }
-
 }
 
 int main(){
